@@ -5,3 +5,22 @@
     clear: both;
   }
 }
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+// MEDIA QUERY MANAGER
+/* 
+0 - 600px:                PHONE
+600 - 900px:              Tablet portrait
+900 - 1200px              Tablet landscape
+[1200 - 1800 ]            is where our style apply
+1800+ :                   BIG Desktop
+*/
+
+@mixin respond-phone {
+  @media (max-width: 600px) { @content; }
+}

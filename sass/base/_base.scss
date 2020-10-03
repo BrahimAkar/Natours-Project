@@ -8,6 +8,10 @@
 
 html {
   font-size: 10px;
+
+  @include respond-phone {
+    font-size: 50%;
+  }
 }
 
 body {
