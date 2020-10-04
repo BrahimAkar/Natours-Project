@@ -19,8 +19,41 @@
 900 - 1200px              Tablet landscape
 [1200 - 1800 ]            is where our style apply
 1800+ :                   BIG Desktop
+
+$breakpoint argument choices:
+- Phone
+- Tab port
+- Tab land
+- big Desktop
 */
 
-@mixin respond-phone {
-  @media (max-width: 600px) { @content; }
+
+//? ORDER:  Base + typography > general layout + grid > page layout > components
+
+// 1em = 16px
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tabport {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == tabland {
+    // 1200px
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == bigdesktop {
+    // 1800
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
 }
